@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#Themetoggle {
+  display: none;
+}
+
+.page {
+  --bg: #f3f3f3;
+  --panel: #ffffff9f;
+  --border: #0078d7;
+  --text: #1c1c1e;
+  --muted: #5c4077;
+  --accent: #0078d7;
+  --font: Courier New;
+
+  font-family: var(--font);
+  color: var(--text);
+  background-image: url("https://i.pinimg.com/736x/a6/60/1c/a6601c132339e9b9dc954973cce7751e.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+#Themetoggle:checked ~ .page {
+  --bg: #0a0a0d;
+  --panel: #111014;
+  --border: #6a1b6f;
+  --text: #f4f4f5;
+  --muted: #b3a1c9;
+  --accent: #e91e8c;
+  --font: monospace;
+  background-image: url("https://i.pinimg.com/1200x/82/96/59/8296593aaae9da439a4723292f4476fe.jpg");
+}
+
+.dark-content {
+  display: none !important;
+}
+
+#Themetoggle:checked ~ .page .light-content {
+  display: none !important;
+}
+
+#Themetoggle:checked ~ .page .dark-content {
+  display: inline !important;
+}
+
+nav {
+  background-color: var(--panel);
+  border-bottom: 2px solid var(--accent);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-weight: bold;
+  color: var(--accent);
+}
+
+.links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: var(--accent);
+}
+
+.switch {
+  width: 46px;
+  height: 24px;
+  background-color: var(--border);
+  border-radius: 20px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+.ball {
+  width: 18px;
+  height: 18px;
+  background-color: var(--panel);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: left 0.5s;
+}
+
+#Themetoggle:checked ~ .page .ball {
+  left: 25px;
+}
+
+section {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  padding: 2rem 1.5rem;
+  background-color: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+section h2 {
+  color: var(--accent);
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+#Mero {
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+#Mero h1 {
+  font-size: 2.3rem;
+}
+
+.prompt {
+  color: var(--accent);
+}
+
+.subtitle,.interests {
+  color: var(--muted);
+  margin: 0.5rem 0 1rem;
+}
+
+.os-dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 35%;
+}
+
+.dot-windows { background-color: #0078d7; }
+.dot-ubuntu  { background-color: #e95420; }
+.dot-debian  { background-color: #a80030; }
+.dot-fedora  { background-color: #3c6eb4; }
+
+.btn {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  padding: 0.7rem 1.5rem;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--accent);
+  color: var(--bg);
+}
+
+.skills-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.skills-list li {
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  color: var(--accent);
+  padding: 0.2rem 0.8rem;
+}
+
+/* PROJECTS */
+.project-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  margin-bottom: 1rem;
+}
+
+.project-card {
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.project-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.project-card:hover {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+#contact a {
+  color: var(--accent);
+}
+
+.status-line {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.hint {
+  color: var(--muted);
+}
+
+.hint:hover {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.85rem;
+  padding: 1.5rem;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  #Mero h1 {
+    font-size: 1.7rem;
+  }
+}
